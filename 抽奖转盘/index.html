@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script type="text/javascript" src="js/jquery-1.11.0.js"></script>
+    <script type="text/javascript" src="js/awardRotate.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        /* html{ 
+        font-size: calc(100vw/7.5);
+        } */
+        .big {
+            width: 100%;
+            position: relative;
+        }
+
+        #bg {
+            width: 100%;
+        }
+
+        #bg2 {
+            width: 64.2%;
+            position: absolute;
+            top: 38.35%;
+            left: 18.18%;
+        }
+
+        #bg1 {
+            width: 50%;
+            position: absolute;
+            top: 42%;
+            left: 25%;
+        }
+
+        .form {
+            width: 80%;
+            height: 12%;
+            position: absolute;
+            top: 20%;
+            left: 12%;
+            display: flex;
+            justify-content: space-between;
+            /* border: 1px solid red; */
+        }
+
+        .demo {
+            /* display: inline-block; */
+            width: 100%;
+            height: 100%;
+            /* border: 1px solid blue; */
+        }
+
+        #number {
+            width: 98%;
+            height: 44%;
+            border-radius: 16px;
+            border: 0;
+            margin-bottom: 20px;
+            font-size: 20px;
+            text-indent: 1em;
+        }
+
+        .input {
+            width: 98%;
+            height: 44%;
+            background-color: #fff;
+            border-radius: 16px;
+            border: 0;
+        }
+
+        #text {
+            width: 60%;
+            height: 44%;
+            border: 0;
+            margin-top: 30px;
+            font-size: 20px;
+            text-indent: 1em;
+        }
+
+        .demo span {
+            display: inline-block;
+            width: 21%;
+            height: 40%;
+            border: 1px solid orangered;
+            border-radius: 16px;
+            text-align: center;
+            padding-top: 38px;
+            line-height: 44%;
+            margin-top: -30px;
+            color: orangered;
+        }
+
+        .sub {
+            width: 40%;
+        }
+
+        .sub img {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+    <div class="big">
+        <img src="img/bg.png" alt="" id="bg">
+        <img src="img/bg2.png" alt="" id="bg2">
+        <img src="img/sub2.png" alt="" id="bg1">
+        <form action="#" method="GET" class="form">
+            <div class="demo">
+                <input type="text" id="number" placeholder="请输入手机号">
+                <div class="input">
+                    <input type="text" id="text" placeholder="请输入验证码">
+                    <span>获取验证码</span>
+                </div>
+            </div>
+            <div class="sub">
+                <img src="img/sub.png" alt="">
+            </div>
+        </form>
+    </div>
+    <script>
+            var degree = [0, 33, 93, 153, 213, 273, 333];
+            var angles = degree[3];
+            angles = Math.round(Math.random() * 56) + angles;
+            
+
+            $("#bg1").click(function(){
+                $("#bg2").stopRotate();
+                $("#bg2").rotate({
+                    angle:0,
+                    animateTo:angles+1800,
+                    duration:8000,
+                })
+                return false;
+            })
+
+    </script>
+</body>
+
+</html>
